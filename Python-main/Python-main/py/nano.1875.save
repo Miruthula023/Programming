@@ -1,0 +1,22 @@
+what is meant by hysterisis?
+the phenomenom of lagging of magnetic induction behind magnetising feild
+
+current rule
+the algebric sum of the currents at any junction is zera
+
+ADT
+ADT - Abstract datatype
+ADT is type for objects whose behaviour is described by a set of values and operations
+
+Difference between interface and implementation 
+interface :
+interface defines what an object can do
+implementation:
+implementation carries out the instruction defined in the interface
+
+control structures :
+the program that causes jump of control from one part of the program to another
+types of control structures:
+1.sequential statement
+2.alternative or branching statement
+3.looping or iterative statement
