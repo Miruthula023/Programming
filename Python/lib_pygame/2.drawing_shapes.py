@@ -1,0 +1,26 @@
+import pygame
+import sys
+
+pygame.init()
+
+screen = pygame.display.set_mode((800,700))
+pygame.display.set_caption("shapes")
+
+run = True
+
+while run:
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			run = False
+
+	screen.fill((0,12,0))
+	pygame.draw.rect(screen ,(225,225,225),(100,100,70,60),2)
+	pygame.draw.circle(screen,(0,0,225),(300,100),60,2)
+	pygame.draw.line(screen,(225,0,0),(50,50),(250,50),2)
+	pygame.draw.ellipse(screen,(0,250,0),(500,100,200,100),2)
+	pygame.draw.polygon(screen,(250,250,0),[(100,600),(200,400),(300,500)])
+	pygame.draw.polygon(screen,(250,250,0),[(100,900),(200,400),(300,500)])
+	pygame.display.update()
+
+pygame.quit()
+sys.exit()
