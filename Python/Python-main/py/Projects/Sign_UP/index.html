@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+         <meta charset="utf-8"/>
+         <meta name="viewport" content="width=device-width,initial-scale=1"/> 
+         <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css"/>
+         <script type="module" defer src="https://pyscript.net/releases/2025.8.1/core.js"></script>     
+
+	<link rel="stylesheet" href="style.css"/>
+
+  </head>
+
+  <body>
+	
+	<div id="log-box">
+		<label>Username:</label>
+		<input type = "text" id = "username" placeholder="Enter your name" >
+
+		<label>Email id :</label>
+		<input type = "email" id = "Email" placeholder = "Enter your email" >
+
+		<label>Password : </label>
+		<input type = "password" id = "Password" placeholder = "Enter your password">
+
+		<label> confirm password : </label>
+		<input type = "password" id = "Confirm_Password" placeholder = "Re enter ur password ">
+
+		<button id = "Commit"> Submit</button>
+		<p id="message"></p>
+
+	</div>
+
+	<py-script>
+
+	from js import document
+ 	 
+	print("hello")
+	def submit_form(event=None):
+
+    		name = document.getElementById("Username").value.strip()
+    		email = document.getElementById("Email").value.strip()
+    		password = document.getElementById("Password").value.strip()
+		c_password = document.getElementById("Confirm_Password").value.strip()
+   	 	msg = document.getElementById("message")
+
+	if not name or not email or not password:
+        	msg.innerText = "Enter the details"
+       		msg.className = "error"
+   	elif "@" not in email:
+        	msg.innerText = " enter a valid email."
+        	msg.className = "error"
+    	elif len(password) < 6:
+        	msg.innerText = " Password must be at least 6 characters."
+        	msg.className = "error"
+
+	elif password != c_password:
+		msg.innerText = "password doesnt match"
+		msg.className = "error"
+    	else:
+        	msg.innerText = f" Welcome, {name}! Your account has been created."
+        	msg.className = "success"
+        	document.getElementById("Username").value = ""
+        	document.getElementById("Email").value = ""
+        	document.getElementById("Password").value = ""
+		document.getElementById("Confirm_Password").value = ""
+
+	</py-script>
+
+  </body>
+ </html>
+
